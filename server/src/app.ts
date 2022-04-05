@@ -2,6 +2,8 @@ import express from "express";
 
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 app.use(express.static("build"));
 // build 폴더를 꺼내가서 서버에서 사용해도 된다고 명시해주는 것.
 
@@ -11,7 +13,7 @@ app.get("/", function (req, res) {
   // build 폴더를 server 폴더로 옮긴다.
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("server is running");
 });
 
